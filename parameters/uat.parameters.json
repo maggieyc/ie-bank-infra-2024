@@ -6,19 +6,19 @@
             "value": "nonprod"
         },
         "postgreSQLServerName": {
-            "value": "mchen-dbsrv-dev"
+            "value": "mchen-dbsrv-uat"
         },
         "postgreSQLDatabaseName": {
-            "value": "mchen-db-dev"
+            "value": "mchen-db-uat"
         },
         "appServicePlanName": {
-            "value": "mchen-asp-dev"
+            "value": "mchen-asp-uat"
         },
         "appServiceAPIAppName": {
-            "value": "mchen-be-dev"
+            "value": "mchen-be-uat"
         },
         "appServiceAppName": {
-            "value": "mchen-fe-dev"
+            "value": "mchen-fe-uat"
         },
         "location": {
             "value": "North Europe"
