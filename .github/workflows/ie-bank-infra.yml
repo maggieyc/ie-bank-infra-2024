@@ -53,12 +53,10 @@ jobs:
   deploy-uat:
     runs-on: ubuntu-latest
     needs: [build, deploy-dev]
-    if: github.event_name == 'pull_request' && github.base_ref == 'main'
     environment:
-      name: "uat"
+      name: "UAT"
 
     steps:
-
       # Checkout code
       - uses: actions/checkout@main
 
