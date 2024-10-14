@@ -56,7 +56,6 @@ jobs:
     if: github.event_name == 'pull_request' && github.base_ref == 'main'
     environment:
       name: "uat"
-
     steps:
 
       # Checkout code
