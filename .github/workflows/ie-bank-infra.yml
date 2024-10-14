@@ -55,7 +55,6 @@ jobs:
     needs: [build, deploy-dev]
     environment:
       name: "UAT"
-
     steps:
       # Checkout code
       - uses: actions/checkout@main
