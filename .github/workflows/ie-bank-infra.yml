@@ -1,6 +1,8 @@
 name: ie-bank-infra
 
 on:
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
   push:
     paths-ignore:
@@ -25,7 +27,6 @@ jobs:
         run: az bicep build --file ./main.bicep
 
   deploy-dev:
-    #   if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     needs: build
     environment:
@@ -51,14 +52,12 @@ jobs:
           deploymentName: ${{ env.USER_ALIAS }}
 
   deploy-uat:
-    if: github.event_name == 'pull_request' && github.base_ref == 'main'
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, deploy-dev]
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
     environment:
       name: "UAT"
-
     steps:
-
       # Checkout code
       - uses: actions/checkout@main
 
